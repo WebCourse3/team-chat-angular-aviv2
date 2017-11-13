@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading ">
+          <span>Sign In</span>
+        </div>
+        <div class="details">
+          <div>
+            <label for="UserName">UserName:</label>
+            <input [(ngModel)]="user.username" id="UserName" type="text" class="form-control" placeholder="UserName"
+                   name="UserName">
+          </div>
+          <div>
+            <label for="PassWord">Password:</label>
+            <input [(ngModel)]="user.password" id="Password" type="text" class="form-control" placeholder="Password"
+                   name="Password"><br>
+          </div>
+          <button (click)="submit()" type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

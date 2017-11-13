@@ -1,0 +1,23 @@
+{
+  "name": "angular-team-chat-aviv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebCourse3/team-chat-angular-aviv2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebCourse3/team-chat-angular-aviv2/issues"
+  },
+  "homepage": "https://github.com/WebCourse3/team-chat-angular-aviv2#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.2"
+  }
+}
