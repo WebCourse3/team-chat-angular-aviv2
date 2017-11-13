@@ -12,7 +12,7 @@ export class SignInService {
   constructor(private http: HttpClient) { }
 
   getUsers (userName: string): Observable<User[]> {
-    return this.http.get<User[]>("localhost:3000/validate/" + userName)
+    return this.http.get<User[]>("http://localhost:3000/validate/" + userName)
       .pipe(
         tap(users => this.log(`fetched users`)),
         catchError(this.handleError('getUsers', []))

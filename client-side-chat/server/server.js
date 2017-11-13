@@ -6,7 +6,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 var file = require('file-system');
 var fs = require('fs');
-var cors = require('cors')
+var cors = require('cors');
 
 // Get our API routes
 const api = require('./routes/api');
@@ -50,9 +50,9 @@ server.listen(port, () => console.log(`API running on localhost:${port}`));
 
 var jsonUsers = JSON.parse(fs.readFileSync('C:\\Users\\Jbt\\WebstormProjects\\angular-team-chat-aviv\\client-side-chat\\server\\data\\users.json'), 'utf-8');
 
-function doesUserExist() {
-  return jsonUsers.filter(user => user.username === req.params.username).length === 1;
+function doesUserExist(username) {
+  return jsonUsers.filter(user => user.username === username).length === 1;
 }
 
 
-
+//sfsadfgsd
