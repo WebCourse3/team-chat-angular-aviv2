@@ -35,7 +35,7 @@ app.post('/validate', (req, res) => {
 
   if (doesUserExist(req.body.username)) {
     let tempUser = jsonUsers.find(user => user.username === req.body.username);
-    if (tempUser.password.toString() === req.body.password)
+    if (tempUser.password === parseInt(req.body.password))
       res.send(tempUser);
     else
       send('username or password incorrect, please try again');
