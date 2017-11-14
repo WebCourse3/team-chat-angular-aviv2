@@ -1,3 +1,4 @@
+<base href="/">
 <div class="container">
   <div class="row">
     <div class="col-xs-offset-3 col-xs-6">
@@ -13,7 +14,7 @@
           </div>
           <div>
             <label for="PassWord">Password:</label>
-            <input [(ngModel)]="user.password" id="Password" type="text" class="form-control" placeholder="Password"
+            <input [(ngModel)]="user.password" id="Password" type="password" class="form-control" placeholder="Password"
                    name="Password"><br>
           </div>
           <button (click)="submit()" type="submit" class="btn btn-default">Submit</button>

@@ -20,7 +20,7 @@ export class SignInComponentComponent implements OnInit {
   }
 
   submit(){
-    this.signInService.getUsers(this.user.username).subscribe((res) => console.log(res));
+    this.signInService.loginUser(this.user.username,this.user.password).subscribe((res) => console.log(res));
   }
 
 }

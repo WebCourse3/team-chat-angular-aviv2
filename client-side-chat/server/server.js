@@ -16,7 +16,6 @@ const app = express();
 app.use(cors());
 // Parsers for POST data
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Point static path to dist
@@ -27,9 +26,22 @@ app.use('/api', api);
 // Catch all other routes and return the index file
 app.get('/validate/:username', (req, res) => {
   if (doesUserExist(req.params.username))
-    res.send("user connected");
+    res.send(jsonUsers.find(user => user.username === req.params.username));
   else
-    res.send("user doesnt exist!");
+    res.send('user doesnt exist!');
+});
+
+app.post('/validate', (req, res) => {
+
+  if (doesUserExist(req.body.username)) {
+    let tempUser = jsonUsers.find(user => user.username === req.body.username);
+    if (tempUser.password.toString() === req.body.password)
+      res.send(tempUser);
+    else
+      send('username or password incorrect, please try again');
+  }
+  else
+    res.send('user doesnt exist!');
 });
 
 /**
@@ -53,6 +65,5 @@ var jsonUsers = JSON.parse(fs.readFileSync('C:\\Users\\Jbt\\WebstormProjects\\an
 function doesUserExist(username) {
   return jsonUsers.filter(user => user.username === username).length === 1;
 }
-
 
 //sfsadfgsd

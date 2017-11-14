@@ -11,8 +11,18 @@ export class SignInService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers (userName: string): Observable<User[]> {
-    return this.http.get<User[]>("http://localhost:3000/validate/" + userName)
+  // loginUser (userName: string): Observable<User[]> {
+  //   return this.http.get<User[]>("http://localhost:3000/validate/" + userName)
+  //     .pipe(
+  //       tap(users => this.log(`fetched users`)),
+  //       catchError(this.handleError('getUsers', []))
+  //     );
+  // }
+
+
+  loginUser (userName: string,password:number) {
+    let body = {username: userName,password : password};
+    return this.http.post("http://localhost:3000/validate/",body)
       .pipe(
         tap(users => this.log(`fetched users`)),
         catchError(this.handleError('getUsers', []))
@@ -23,7 +33,7 @@ export class SignInService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      console.log(error.toString()); // log to console instead
 
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
