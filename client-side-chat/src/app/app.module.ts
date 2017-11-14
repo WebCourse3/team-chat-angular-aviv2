@@ -5,22 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SignInComponentComponent } from './sign-in-component/sign-in-component.component';
+import { RoomsComponentComponent } from './rooms-component/rooms-component.component';
 
-
-// const appRoutes: Routes = [
-//   { path: 'crisis-center', component: CrisisListComponent },
-//   { path: 'hero/:id',      component: HeroDetailComponent },
-//   {
-//     path: 'heroes',
-//     component: HeroListComponent,
-//     data: { title: 'Heroes List' }
-//   },
-//   { path: '',
-//     redirectTo: '/heroes',
-//     pathMatch: 'full'
-//   },
-//   { path: '**', component: PageNotFoundComponent }
-// ];
+const appRoutes: Routes = [
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'heroes',
+    component: HeroListComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/users',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 
 @NgModule({
@@ -37,7 +37,8 @@ import { SignInComponentComponent } from './sign-in-component/sign-in-component.
 
   declarations: [
     AppComponent,
-    SignInComponentComponent
+    SignInComponentComponent,
+    RoomsComponentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
